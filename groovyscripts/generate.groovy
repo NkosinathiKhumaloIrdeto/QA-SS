@@ -78,3 +78,15 @@ println ""
 println "=================================================================="
 println ""
 
+logFolders("SS"+scheduleID)
+
+def logFolders(scheduleID){ 
+  
+  File file = new File("../folders_SS.txt")
+  
+  file.text = ''
+ 
+  file << scheduleID + "_" + "21103\n" +  scheduleID + "_" + "21203\n" + scheduleID + "_" + "21303\n" + scheduleID + "_" + "21403\n"
+  
+}
+
