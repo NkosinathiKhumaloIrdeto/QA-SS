@@ -1,0 +1,50 @@
+{
+	"info": {
+		"name": "Collection_MVP",
+		"_postman_id": "8ff0ecda-60e3-5632-b8fa-cf12578a9a12",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bfb3d5c5-d7a1-4412-8fb2-f2ed7339fe5b",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Should have 5 Files (DPR,SUN,SUN_ipr,HD_DPV,SD_DPV)\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.total).to.above(4);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://172.16.103.244:8081/ds-pay-vod/videoAsset;filterField=externalReference.genRef;externalReference.genRefFilterValue={gen_shid}",
+					"protocol": "http",
+					"host": [
+						"172",
+						"16",
+						"103",
+						"244"
+					],
+					"port": "8081",
+					"path": [
+						"ds-pay-vod",
+						"videoAsset;filterField=externalReference.genRef;externalReference.genRefFilterValue={gen_shid}"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

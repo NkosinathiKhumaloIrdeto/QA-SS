@@ -90,3 +90,36 @@ def logFolders(scheduleID){
   
 }
 
+//check if dir exists
+if(checkDir("../automation/collections/")){
+
+  def jsonContents = new File("collections/Collection_MVP.postman_collection.json").getText()
+  def jsonFilePath = "../automation/collections/Collection_MVP.postman_collection_1.json"
+
+  jsonContents = jsonContents.replace("{gen_shid}",genref + "_SS" + scheduleID);
+
+  File jsonFile = new File(jsonFilePath)
+
+  jsonFile.text = jsonContents
+
+} else {
+
+throw new IOException("Folder path not found: " + "../automation/collections/")
+
+}
+
+def checkDir(def path){
+
+def folder = new File( path )
+
+  if( !folder.exists() ) {
+    // Create all folders up-to and including B
+    folder.mkdirs()
+  } else {
+    return true
+  }
+
+  return true
+}
+
+
