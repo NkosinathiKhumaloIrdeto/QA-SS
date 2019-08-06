@@ -2,7 +2,7 @@
 
 //generate and convert value to string
 def genref =  String.valueOf(((int)((Math.random()*9193589467)+1))).substring(0, 8)
-def uid = String.valueOf(((int)((Math.random()*919359467)+1))).substring(0, 9)
+def uid = String.valueOf(((int)((Math.random()*919359467)+1))).substring(0, 8)
 def scheduleID = uid
 uid = "MOT_" + uid + "_MGP_AUT_M2_HD5"
 def seriesID = String.valueOf(((int)((Math.random()*919359467)+1))).substring(0, 4)
